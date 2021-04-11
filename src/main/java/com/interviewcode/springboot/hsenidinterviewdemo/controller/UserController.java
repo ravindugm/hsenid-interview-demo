@@ -6,6 +6,7 @@ import com.interviewcode.springboot.hsenidinterviewdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -79,5 +80,15 @@ public class UserController {
         theModel.addAttribute("user", theUser);
 
         return "/user-detail-form";
+    }
+
+    @GetMapping("/login")
+    public String login(ModelMap theModel) {
+
+        User theUser = new User();
+
+        theModel.addAttribute("user", theUser);
+
+        return "/login-form";
     }
 }
