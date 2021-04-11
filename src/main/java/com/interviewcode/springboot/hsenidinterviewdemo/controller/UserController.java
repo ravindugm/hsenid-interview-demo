@@ -29,4 +29,14 @@ public class UserController {
 
         return "/list-users";
     }
+
+    @GetMapping("/showAdminRegistrationForm")
+    public String showAdminRegistrationForm(Model theModel) {
+
+        User theAdmin = new User();
+
+        theModel.addAttribute("admin", theAdmin);
+
+        return "/admin-registration-form";
+    }
 }
