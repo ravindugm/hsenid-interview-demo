@@ -29,6 +29,7 @@
             <th>Email</th>
             <th>Phone Number</th>
             <th>Address</th>
+            <th>View User</th>
         </tr>
         </thead>
 
@@ -39,6 +40,14 @@
             <td th:text="${tempUser.email}"/>
             <td th:text="${tempUser.phoneNumber}"/>
             <td th:text="${tempUser.address}"/>
+
+            <!-- Add "View User" button -->
+            <td>
+                <a th:href="@{/users/showUserDetailsForm(userId=${tempUser.id})}"
+                   class="btn btn-info btn-sm">
+                    View User
+                </a>
+            </td>
 
         </tr>
         </tbody>
