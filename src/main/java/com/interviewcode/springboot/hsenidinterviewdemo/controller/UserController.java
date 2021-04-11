@@ -61,6 +61,16 @@ public class UserController {
         return "/user-registration-form";
     }
 
+    @PostMapping("/saveUser")
+    public String saveUser(@ModelAttribute("user") User theUser) {
+
+        theUser.setRoles(Arrays.asList(new Role("USER")));
+
+        userService.save(theUser);
+
+        return "redirect:/users/login";
+    }
+
     @GetMapping("/showUserDetailsForm")
     public String showUserDetailsForm(@RequestParam("userId") int theId, Model theModel) {
 
