@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>User Details</title>
+</head>
+
+<body>
+<div class="container">
+    <h3>User Details</h3>
+    <hr>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempUser : ${users}">
+            <td th:text="${tempUser.firstName}"/>
+            <td th:text="${tempUser.lastName}"/>
+            <td th:text="${tempUser.email}"/>
+            <td th:text="${tempUser.phoneNumber}"/>
+            <td th:text="${tempUser.address}"/>
+
+        </tr>
+        </tbody>
+
+    </table>
+
+</div>
+</body>
+</html>
