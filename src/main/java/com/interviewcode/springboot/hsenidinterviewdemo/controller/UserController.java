@@ -51,6 +51,16 @@ public class UserController {
         return "redirect:/users/list";
     }
 
+    @GetMapping("/showUserRegistrationForm")
+    public String showUserRegistrationForm(Model theModel) {
+
+        User theUser = new User();
+
+        theModel.addAttribute("user", theUser);
+
+        return "/user-registration-form";
+    }
+
     @GetMapping("/showUserDetailsForm")
     public String showUserDetailsForm(@RequestParam("userId") int theId, Model theModel) {
 
