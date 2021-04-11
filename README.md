@@ -66,9 +66,15 @@ spring.datasource.username=spring
 spring.datasource.password=12345
 ```
 
-# Run the Project
+# Deploy the Project
 
-Hence this project does not have a `Login Page` have to use `HTTP request URLs` to access the system.
+- To deploy the application has to execute:
+
+```
+HsenidInterviewDemoApplication.java
+```
+
+Hence this project does not have a `Login Validation` have to use `HTTP request URLs` to access the system.
 
 - For access `Admin Interface`:
 
