@@ -6,10 +6,7 @@ import com.interviewcode.springboot.hsenidinterviewdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -52,5 +49,15 @@ public class UserController {
         userService.save(theAdmin);
 
         return "redirect:/users/list";
+    }
+
+    @GetMapping("/showUserDetailsForm")
+    public String showUserDetailsForm(@RequestParam("userId") int theId, Model theModel) {
+
+        User theUser = userService.findById(theId);
+
+        theModel.addAttribute("user", theUser);
+
+        return "/user-detail-form";
     }
 }
